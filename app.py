@@ -217,4 +217,5 @@ def main_terminal():
 # python3 -m flask run --host=0.0.0.0 --port=4000
 app.secret_key = "Python Study"
 if __name__ == "__main__":
-    app.run()
+    # app.run()
+    main_terminal()
