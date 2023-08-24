@@ -1,16 +1,34 @@
+"""Unit test cases for hangman game."""
 import unittest
-import app
+import app as hangman
+
 
 class HangmanTestCase(unittest.TestCase):
 
-    # checkCorrectAnswer(“사용자가입력한글자들", “맞춰야할 단어”)
+    # def setUp(self):
+    #
+
+    # checkCorrectAnswer(correctLetters, secretWord)
     def test_checkCorrectAnswer(self):
-        answer = app.checkCorrectAnswer("baon", "baboon")
+        answer = hangman.checkCorrectAnswer("baon", "baboon")
         self.assertTrue(answer)
 
     def test_checkWrongAnswer(self):
-        answer = app.checkWrongAnswer("zebrio", "zebra")
+        answer = hangman.checkWrongAnswer("zebrio", "zebra")
         self.assertTrue(answer)
+
+    def test_1(self):
+        answer = hangman.checkCorrectAnswer("bazn", "baboon")
+        self.assertFalse(answer)
+
+    def test_2(self):
+        answer = hangman.checkCorrectAnswer("", " ")
+        self.assertFalse(answer)
+
+    def test_3(self):
+        answer = hangman.checkCorrectAnswer("ZEBRA", "zebra")
+        self.assertFalse(answer)
+
 
 if __name__ == "__main__":
     unittest.main()
